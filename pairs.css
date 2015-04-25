@@ -1,0 +1,37 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#playfield table td{
+	vertical-align: middle;
+	text-align: center;
+}
+
+#playfield td img {
+	cursor: pointer;
+	border: 1px solid white;
+	padding: 5px;
+}
+
+#playfield td img:hover {
+	border: 1px solid #66f;
+}
+
+
+body {
+	text-align: center;
+}
+
+#page {
+	width: 808px;
+	margin: 20px auto;
+	text-align: left;
+}
+
+#playfield  {
+	width: auto;
+	border: 1px solid black; 
+	margin: 10px 0;
+	padding: 10px;
+}
