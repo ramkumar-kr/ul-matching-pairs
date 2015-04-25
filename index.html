@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>		
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="pairs.css" type="text/css" media="screen" charset="utf-8" />		
+		<script src="lib/mootools/mootools-1.2-all.js" type="text/javascript"></script>  
+		<script src="pairs.js" type="text/javascript"></script>
+		
+		<script type="text/javascript" charset="utf-8">
+
+			function initPage() {
+				var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+				var height = (window.innerHeight > 0) ? window.innerHeight : screen.height;
+				console.log("Width : "+width%4);
+				console.log("Height : "+ height);
+				var cols = 4, rows = 6;
+				//var images = get_random_images(cols*rows/2);
+				var pairsGame = new PairsGame({
+					containerId: 'playfield',
+					cardWidth: width/5,
+					cardHeight: height/8,
+					cols: cols,
+					rows: rows,
+					imageBase: 'https://www.urbanladder.com/assets/',
+					hiddenImage: 'images/urbanladder_logo.png', 
+					/* hiddenImage: 'images/schneeschuhe_big.jpg',*/
+					images: ['abendwolken.jpg','herd.jpg','muellkatze.jpg',
+						'ich_in_berlin.jpg','schaedel.jpg','sonnenblume.jpg',
+						'duenenbier.jpg','igel.jpg','schlafkatze.jpg',
+						'sunset.jpg']
+						
+					//images: ['logo.png','logo_new.png']
+				});		
+			}
+
+			window.addEvent('domready', initPage);	
+ 
+		</script>
+		
+		<title>Pairs Game</title>
+	</head>
+	<body>
+
+		<div id="page">
+			<h3>JavaScript Pairs Game</h3>
+			<br/>
+			<div id="playfield">
+				<!-- will be filled by pairs.js javascript -->			
+			</div>
+		
+			<p>
+				<a onclick="initPage();return false;" href="#">Restart Game</a>
+			</p>
+			
+		</div>
+
+	</body>
+</html>
