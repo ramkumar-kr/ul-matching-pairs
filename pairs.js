@@ -248,7 +248,7 @@ var PairsGame = new Class({
 	onCardShown: function() {
 		if (this.hiddenCards == 0) {
 			alert("Finished with "+this.clickedCards+" Clicks");
-			location.href="https://www.google.co.in"
+			location.href="https://www.urbanladder.com"
 		}
 	},
 	
