@@ -10,8 +10,10 @@
 
 #playfield td img {
 	cursor: pointer;
-	border: 1px solid white;
-	padding: 5px;
+	border: 1px dotted green;
+	border-radius: 10%;
+	padding: 10px;
+	margin: 6px;
 }
 
 #playfield td img:hover {

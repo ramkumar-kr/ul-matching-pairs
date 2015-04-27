@@ -3,16 +3,17 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>		
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="pairs.css" type="text/css" media="screen" charset="utf-8" />		
+		<link rel="stylesheet" href="pairs.css" type="text/css" media="screen" charset="utf-8" />	
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 		<script src="lib/mootools/mootools-1.2-all.js" type="text/javascript"></script>  
 		<script src="pairs.js" type="text/javascript"></script>
 		
 		<script type="text/javascript" charset="utf-8">
 
 			function initPage() {
-				var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+				var width = document.getElementById("playfield").offsetWidth;
 				var height = (window.innerHeight > 0) ? window.innerHeight : screen.height;
-				console.log("Width : "+width%4);
+				console.log("Width : "+ width);
 				console.log("Height : "+ height);
 				var cols = 4, rows = 6;
 				//var images = get_random_images(cols*rows/2);
@@ -44,16 +45,12 @@
 	<body>
 
 		<div id="page">
-			<h3>JavaScript Pairs Game</h3>
-			<br/>
+			<p>
+				<a class="btn btn-lg btn-warning" onclick="initPage();return false;" href="#">Restart Game</a>
+			</p>
 			<div id="playfield">
 				<!-- will be filled by pairs.js javascript -->			
-			</div>
-		
-			<p>
-				<a onclick="initPage();return false;" href="#">Restart Game</a>
-			</p>
-			
+			</div>		
 		</div>
 
 	</body>
