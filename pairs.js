@@ -1,13 +1,3 @@
-/*
-	JavaScript Pairs Game 
-
-License: 
-	GNU General Public License 3 (http://www.gnu.org/licenses/gpl-3.0.txt)
-
-Copyright:
-	Copyright (c) 2008 [Marco Stahl](http://javascriptpairs.sourceforge.net)
-
-*/
 var Card = new Class( {	
 	pairsGame: null,
 	imageSrc: null,
@@ -26,9 +16,9 @@ var Card = new Class( {
 		this.pairsGame = pairsGame;
 		this.imageSrc = imageSrc;
 		this.hiddenImageSrc = pairsGame.hiddenImage;
-		
 		// loading cardImage
 		this.cardImage = new Image();
+
 		$(this.cardImage).addEvent('load',function(){
 			if (this.imageLoaded) {
 				return;
@@ -247,8 +237,9 @@ var PairsGame = new Class({
 
 	onCardShown: function() {
 		if (this.hiddenCards == 0) {
-			alert("Finished with "+this.clickedCards+" Clicks");
-			location.href="https://www.urbanladder.com"
+			var score = Math.floor(2400/this.clickedCards);
+			alert("Score : "+ score);
+			window.location = "https://151a0307.ngrok.com/~ramkumar/untitled%20folder/ul-matching-pairs-master/results.php?score="+score;
 		}
 	},
 	

@@ -1,40 +1,52 @@
+<?php
+error_reporting(E_ERROR);
+session_start();
+$content=file_get_contents("https://script.google.com/macros/s/AKfycbwFYj0LiqWIFM4m3q0W_WD9bw5fuOEZO3gxYFI0JRe1_JgLDo5w/exec");
+$json = json_decode($content,true);
+//var_dump($json);
+for($i=0; $i < count($json);$i++)
+{
+	copy($json[$i]["image"], 'tmp/'.$i.'.png');
+}
+$_SESSION["json"]=$content;
+
+
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>		
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="pairs.css" type="text/css" media="screen" charset="utf-8" />	
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">	
 		<script src="lib/mootools/mootools-1.2-all.js" type="text/javascript"></script>  
 		<script src="pairs.js" type="text/javascript"></script>
-		
 		<script type="text/javascript" charset="utf-8">
-
 			function initPage() {
-				var width = document.getElementById("playfield").offsetWidth;
+				window.setTimeout(function(){},4000);
+				var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 				var height = (window.innerHeight > 0) ? window.innerHeight : screen.height;
-				console.log("Width : "+ width);
+				console.log("Width : "+width%4);
 				console.log("Height : "+ height);
 				var cols = 4, rows = 6;
-				//var images = get_random_images(cols*rows/2);
+				
 				var pairsGame = new PairsGame({
 					containerId: 'playfield',
 					cardWidth: width/5,
 					cardHeight: height/8,
 					cols: cols,
 					rows: rows,
-					imageBase: 'images/',
+					imageBase: 'tmp/',
 					//imageBase: 'https://www.urbanladder.com/assets/',
-					hiddenImage: 'images/urbanladder_logo.png', 
+					hiddenImage: 'tmp/logo_new.png', 
 					/* hiddenImage: 'images/schneeschuhe_big.jpg',*/
-					images: ['abendwolken.jpg','herd.jpg','muellkatze.jpg',
-						'ich_in_berlin.jpg','schaedel.jpg','sonnenblume.jpg',
-						'duenenbier.jpg','igel.jpg','schlafkatze.jpg',
-						'sunset.jpg']
-						
+					images: ['0.png','1.png','2.png','3.png','4.png','5.png','6.png','7.png','8.png','9.png','10.png','11.png']
 					//images: ['logo.png','logo_new.png']
 				});		
 			}
+
+
 
 			window.addEvent('domready', initPage);	
  
@@ -45,12 +57,16 @@
 	<body>
 
 		<div id="page">
-			<div id="playfield">
-				<!-- will be filled by pairs.js javascript -->			
-			</div>
+		
 			<p>
 				<a class="btn btn-lg btn-warning" onclick="initPage();return false;" href="#">Restart Game</a>
 			</p>
+		
+			<div id="playfield">
+				<!-- will be filled by pairs.js javascript -->			
+			</div>
+			
 		</div>
+
 	</body>
 </html>
