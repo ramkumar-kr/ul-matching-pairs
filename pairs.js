@@ -239,7 +239,7 @@ var PairsGame = new Class({
 		if (this.hiddenCards == 0) {
 			var score = Math.floor(2400/this.clickedCards);
 			alert("Score : "+ score);
-			window.location = "https://151a0307.ngrok.com/~ramkumar/untitled%20folder/ul-matching-pairs-master/results.php?score="+score;
+			window.location = "https://ul-matching-pairs.herokuapp.com/results.php?score="+score;
 		}
 	},
 	
