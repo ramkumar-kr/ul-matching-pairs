@@ -38,7 +38,7 @@ $score = $_GET["score"];
 						}				
 					?>
 					</ul></div>
-					<a class="btn btn-block  btn-lg btn-success" href="https://151a0307.ngrok.com/~ramkumar/untitled%20folder/ul-matching-pairs-master/">Play Again </a>
+					<a class="btn btn-block  btn-lg btn-success" href="index.php">Play Again </a>
 					<br/>
 			</div>
 		</div>
